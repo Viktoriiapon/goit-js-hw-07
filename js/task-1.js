@@ -1,42 +1,37 @@
-const getUserNames = users => {
-  return users.map(user => user.name);
-};
-console.log(
-  getUserNames([
-    {
-      name: 'Moore Hensley',
-      email: 'moorehensley@indexia.com',
-      balance: 2811,
-    },
-    {
-      name: 'Sharlene Bush',
-      email: 'sharlenebush@tubesys.com',
-      balance: 3821,
-    },
-    {
-      name: 'Ross Vazquez',
-      email: 'rossvazquez@xinware.com',
-      balance: 3793,
-    },
-    {
-      name: 'Elma Head',
-      email: 'elmahead@omatom.com',
-      balance: 2278,
-    },
-    {
-      name: 'Carey Barr',
-      email: 'careybarr@nurali.com',
-      balance: 3951,
-    },
-    {
-      name: 'Blackburn Dotson',
-      email: 'blackburndotson@furnigeer.com',
-      balance: 1498,
-    },
-    {
-      name: 'Sheree Anthony',
-      email: 'shereeanthony@kog.com',
-      balance: 2764,
-    },
-  ]),
-);
+const categoriesList = document.querySelectorAll(`#categories .item`);
+const count = categoriesList.length;
+console.log(`Total categories: ${count}`);
+
+
+
+
+categoriesList.forEach(category => {
+  const name = category.querySelector(`h2`).textContent;
+  const elements = category.querySelectorAll(`li`);
+  console.log(`Category : ${name}`);
+  console.log(`Elements : ${elements.length}`);
+});
+
+
+const title = document.querySelectorAll(`h2`);
+title.forEach(title => {
+  title.classList.add('title');
+});
+const item = document.querySelectorAll(`.item > ul > li`);
+item.forEach(item => {
+  item.classList.add(`liItem`);
+});
+const itemList = document.querySelectorAll('.item > ul');
+itemList.forEach(itemList => {
+  itemList.classList.add('item-list');
+});
+
+// const box = document.body.item.querySelectorAll(`li`);
+// console.log(box);
+// const list = document.querySelectorAll(`ul`);
+// list.forEach(list => {
+//   list.classList.add('item-list');
+// });
+// console.log();
+
+console.log(itemList);

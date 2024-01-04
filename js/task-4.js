@@ -1,47 +1,19 @@
-const getTotalBalanceByGender = (users, gender) => {
-  return users
-    .filter(user => user.gender === gender)
-    .reduce((sumBalance, user) => sumBalance + user.balance, 0);
-};
+const form = document.querySelector(`.login-form`);
 
-const allUsers = [
-  {
-    name: 'Moore Hensley',
-    gender: 'male',
-    balance: 2811,
-  },
-  {
-    name: 'Sharlene Bush',
-    gender: 'female',
-    balance: 3821,
-  },
-  {
-    name: 'Ross Vazquez',
-    gender: 'male',
-    balance: 3793,
-  },
-  {
-    name: 'Elma Head',
-    gender: 'female',
-    balance: 2278,
-  },
-  {
-    name: 'Carey Barr',
-    gender: 'male',
-    balance: 3951,
-  },
-  {
-    name: 'Blackburn Dotson',
-    gender: 'male',
-    balance: 1498,
-  },
-  {
-    name: 'Sheree Anthony',
-    gender: 'female',
-    balance: 2764,
-  },
-];
+form.addEventListener(`submit`, onFormSubmit);
 
-console.log(getTotalBalanceByGender(allUsers, 'male'));
+function onFormSubmit(event) {
+  event.preventDefault();
+  const email = form.elements.email.value.trim();
+  const password = form.elements.password.value.trim();
+  const userData = { email, password };
 
-console.log(getTotalBalanceByGender(allUsers, 'female'));
+  if (email === `` || password === ``) {
+    alert(`All form fields must be filled in`);
+  } else {
+    const userData = { email, password };
+    console.log(userData);
+  }
+  form.reset();
+
+}
